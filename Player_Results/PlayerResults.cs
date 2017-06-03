@@ -209,7 +209,8 @@ public class PlayerResults : MonoBehaviour {
             Character_Stats.setLegs(1);
         else Character_Stats.setLegs(0);
         setLegsScore(legsscore);
-
+        
+        
         int handsscore = (getBicepsScore() + getForearmsScore() + getTricepsScore() + getShoulderScore()) / 4;
         if (handsscore >= Treshhold)
             Character_Stats.setHands(1);
@@ -221,7 +222,7 @@ public class PlayerResults : MonoBehaviour {
             Character_Stats.setBody(1);
         else Character_Stats.setBody(0);
         setBodyScore(bodyscore);
-
+        
         int overall = (legsscore + handsscore + bodyscore) / 3;
 
         setOverall(overall);
