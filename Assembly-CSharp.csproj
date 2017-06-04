@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F2A11A9C-840B-A186-F898-EA930B04062F}</ProjectGuid>
+    <ProjectGuid>{563BD6C0-6759-C7B9-F5A7-F85D2B0F64AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,6 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animations\Scripts\BodyPartChange.cs" />
+     <Compile Include="Assets\Animations\Scripts\ChangeIsHappy.cs" />
+     <Compile Include="Assets\Animations\Scripts\Character_Stats.cs" />
+     <Compile Include="Assets\Player_Results\Panels\ExitButton.cs" />
+     <Compile Include="Assets\Player_Results\Panels\Picture.cs" />
+     <Compile Include="Assets\Player_Results\Panels\ShowStats.cs" />
+     <Compile Include="Assets\Player_Results\Panels\ShowSubStats.cs" />
+     <Compile Include="Assets\Player_Results\PlayerResults.cs" />
+     <Compile Include="Assets\Script\Background.cs" />
      <Compile Include="Assets\Script\Current_day\Choose_training.cs" />
      <Compile Include="Assets\Script\Current_day\Current_day_main.cs" />
      <Compile Include="Assets\Script\Current_day\Exit_button.cs" />

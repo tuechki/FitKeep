@@ -11,7 +11,7 @@ public class ShowSubStats : MonoBehaviour {
 
     public GameObject ClickedObject;
 
-   public void Click()
+   void Click()
     {
 
         Overall.SetActive(false);
@@ -19,27 +19,16 @@ public class ShowSubStats : MonoBehaviour {
         Hands.SetActive(false);
         Legs.SetActive(false);
         Button.SetActive(true);
-
-        switch (ClickedObject.tag)
-        {
-            case "Torso":
-                showTorso();
-                break;
-            case "Feet":
-                showFeet();
-                break;
-            case "Hands":
-                showHands();
-                break;
-        }
     }
     
     public GameObject Chest;
     public GameObject Abs;
     public GameObject Back;
 
-    void showTorso()
+	public void showTorso()
     {
+		Click ();
+
         Chest.SetActive(true);
         Back.SetActive(true);
         Abs.SetActive(true);
@@ -49,8 +38,10 @@ public class ShowSubStats : MonoBehaviour {
     public GameObject Thighs;
     public GameObject Calfs;
 
-    void showFeet()
+    public void showFeet()
     {
+		Click ();
+
         Buttocks.SetActive(true);
         Thighs.SetActive(true);
         Calfs.SetActive(true);
@@ -61,8 +52,10 @@ public class ShowSubStats : MonoBehaviour {
     public GameObject Forearm;
     public GameObject Shoulder;
 
-    void showHands()
+	public void showHands()
     {
+		Click ();
+
         Biceps.SetActive(true);
         Triceps.SetActive(true);
         Forearm.SetActive(true);

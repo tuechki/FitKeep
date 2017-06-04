@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerResults : MonoBehaviour {
-    public int Treshhold;
     public static int Overall = 0;
     //Torso
     public static int Body_Score = 0;
@@ -205,34 +204,35 @@ public class PlayerResults : MonoBehaviour {
     //-------------------------------------------------------------------
     private void Start()
     {
-        setBicepsScore(PlayerPrefs.GetInt("biceps"));
-        setTricepsScore(PlayerPrefs.GetInt("triceps"));
-        setForearmsScore(PlayerPrefs.GetInt("forearm"));
-        setShoulderScore(PlayerPrefs.GetInt("shoulder"));
-        setAbsScore(PlayerPrefs.GetInt("abs"));
-        setChestScore(PlayerPrefs.GetInt("chest"));
-        setBackScore(PlayerPrefs.GetInt("back"));
-        setCalfScore(PlayerPrefs.GetInt("calf"));
-        setThighsScore(PlayerPrefs.GetInt("thigh"));
-        setButtocksScore(PlayerPrefs.GetInt("buttocks"));
+        PlayerPrefs.SetInt("treshhold", 3);
+        setBicepsScore(PlayerPrefs.GetInt("biceps", 0));
+		setTricepsScore(PlayerPrefs.GetInt("triceps", 0));
+		setForearmsScore(PlayerPrefs.GetInt("forearm", 0));
+		setShoulderScore(PlayerPrefs.GetInt("shoulder", 0));
+		setAbsScore(PlayerPrefs.GetInt("abs", 0));
+		setChestScore(PlayerPrefs.GetInt("chest", 0));
+		setBackScore(PlayerPrefs.GetInt("back", 0));
+		setCalfScore(PlayerPrefs.GetInt("calf", 0));
+		setThighsScore(PlayerPrefs.GetInt("thigh", 0));
+		setButtocksScore(PlayerPrefs.GetInt("buttocks", 0));
     }
     private void Update()
     {
         int legsscore = (getButtocksScore() + getCalfScore() + getThighsScore()) / 3;
-        if (legsscore >= Treshhold)
+        if (legsscore >= PlayerPrefs.GetInt("treshhold"))
             Character_Stats.setLegs(1);
         else Character_Stats.setLegs(0);
         setLegsScore(legsscore);
         
         
         int handsscore = (getBicepsScore() + getForearmsScore() + getTricepsScore() + getShoulderScore()) / 4;
-        if (handsscore >= Treshhold)
+        if (handsscore >= PlayerPrefs.GetInt("treshhold"))
             Character_Stats.setHands(1);
         else Character_Stats.setHands(0);
         setHandsScore(handsscore);
 
         int bodyscore = (getChestScore() + getAbsScore() + getBackScore()) / 3;
-        if (bodyscore >= Treshhold)
+        if (bodyscore >= PlayerPrefs.GetInt("treshhold"))
             Character_Stats.setBody(1);
         else Character_Stats.setBody(0);
         setBodyScore(bodyscore);
